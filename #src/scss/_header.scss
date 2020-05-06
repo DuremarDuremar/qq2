@@ -1,0 +1,46 @@
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  // margin-top: 35px;
+}
+.header-logo {
+  padding-top: 70px;
+  & h1 {
+    color: #404040;
+    font-family: "Bebas Neue";
+    font-size: 37px;
+    // line-height: 19px;
+  }
+  & p {
+    color: #404040;
+    font-family: "Arial MT";
+    font-size: 15px;
+  }
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  & div {
+    padding: 70px 7px 7px 7px;
+    &:hover {
+      background-color: #d45e5e;
+    }
+
+    &:hover a {
+      color: #fff;
+    }
+
+    &:not(:last-child) {
+      margin-right: 28px;
+    }
+
+    & a {
+      cursor: pointer;
+      color: #404040;
+      font-family: "HelveticaLight";
+      font-size: 17px;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -53,4 +53,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 33px;
   grid-row-gap: 30px;
+  & img {
+    cursor: pointer;
+  }
 }

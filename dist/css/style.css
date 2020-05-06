@@ -283,6 +283,10 @@ body {
   grid-row-gap: 30px;
 }
 
+.content-home-portfolio-block img {
+  cursor: pointer;
+}
+
 .wrapper-aboutme {
   display: -webkit-box;
   display: -ms-flexbox;

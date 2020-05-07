@@ -204,6 +204,7 @@ body {
 
 .nav-burger div a {
   color: #d45e5e;
+  text-decoration: none;
 }
 
 .nav-burger div a:hover {

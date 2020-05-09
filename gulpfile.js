@@ -16,7 +16,7 @@ let path = {
     css: source_folder + "/scss/style.scss",
     js: source_folder + "/js/script.js",
     img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-    fonts: source_folder + "/fonts/*.ttf",
+    fonts: source_folder + "/fonts/*.{ttf,woff,woff2]",
   },
   watch: {
     html: source_folder + "/**/*.html",
@@ -57,41 +57,35 @@ function browserSync(params) {
 }
 
 function html() {
-  return (
-    src(path.src.html)
-      .pipe(fileinclude())
-      // .pipe(webphtml())
-      .pipe(dest(path.build.html))
-      .pipe(browsersync.stream())
-  );
+  return src(path.src.html)
+    .pipe(fileinclude())
+    .pipe(dest(path.build.html))
+    .pipe(browsersync.stream());
 }
 
 function css() {
-  return (
-    src(path.src.css)
-      .pipe(
-        scss({
-          outputStyle: "expanded",
-        })
-      )
-      .pipe(group_media())
-      .pipe(
-        autoprefixer({
-          overrideBrowserslist: ["last 5 versions"],
-          cascade: true,
-        })
-      )
-      // .pipe(webpcss())
-      .pipe(dest(path.build.css))
-      .pipe(clean_css())
-      .pipe(
-        rename({
-          extname: ".min.css",
-        })
-      )
-      .pipe(dest(path.build.css))
-      .pipe(browsersync.stream())
-  );
+  return src(path.src.css)
+    .pipe(
+      scss({
+        outputStyle: "expanded",
+      })
+    )
+    .pipe(group_media())
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ["last 5 versions"],
+        cascade: true,
+      })
+    )
+    .pipe(dest(path.build.css))
+    .pipe(clean_css())
+    .pipe(
+      rename({
+        extname: ".min.css",
+      })
+    )
+    .pipe(dest(path.build.css))
+    .pipe(browsersync.stream());
 }
 
 function js() {

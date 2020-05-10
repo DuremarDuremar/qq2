@@ -2,6 +2,7 @@ footer {
   background-color: #d45e5e;
   margin-top: 121px;
   color: #ffffff;
+  position: relative;
 }
 
 .footer-wrapper {
@@ -139,4 +140,19 @@ footer {
     font-size: 13px;
     line-height: 20px;
   }
+}
+
+.arrow {
+  text-align: center;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  color: #d45e5e;
+  display: block;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  z-index: 10;
+  cursor: pointer;
 }

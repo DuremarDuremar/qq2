@@ -30,4 +30,15 @@
   border-radius: 100%;
   display: block;
   position: relative;
+  transition: all ease-out 0.5s;
+}
+
+.circle0 {
+  background-color: #d45e5e;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: block;
+  position: relative;
+  transition: all ease-out 0.5s;
 }

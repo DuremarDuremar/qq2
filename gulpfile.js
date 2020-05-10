@@ -78,28 +78,28 @@ function css() {
       })
     )
     .pipe(dest(path.build.css))
+    .pipe(browsersync.stream())
     .pipe(clean_css())
     .pipe(
       rename({
         extname: ".min.css",
       })
     )
-    .pipe(dest(path.build.css))
-    .pipe(browsersync.stream());
+    .pipe(dest(path.build.css));
 }
 
 function js() {
   return src(path.src.js)
     .pipe(fileinclude())
     .pipe(dest(path.build.js))
+    .pipe(browsersync.stream())
     .pipe(uglify())
     .pipe(
       rename({
         extname: ".min.js",
       })
     )
-    .pipe(dest(path.build.js))
-    .pipe(browsersync.stream());
+    .pipe(dest(path.build.js));
 }
 
 function images() {

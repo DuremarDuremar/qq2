@@ -398,6 +398,7 @@ body {
   -webkit-transition: all ease-out 0.5s;
   -o-transition: all ease-out 0.5s;
   transition: all ease-out 0.5s;
+  cursor: pointer;
 }
 
 .circle0 {
@@ -627,6 +628,24 @@ footer {
 
   .content-home-portfolio-title {
     text-align: center;
+    position: relative;
+  }
+
+  .content-home-portfolio-title .circle {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    -webkit-transform: translateX(-150%);
+        -ms-transform: translateX(-150%);
+            transform: translateX(-150%);
+  }
+
+  .content-home-portfolio-title .circle0 {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-150%);
+        -ms-transform: translateX(-150%);
+            transform: translateX(-150%);
   }
 
   .footer-skills {

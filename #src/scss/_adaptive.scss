@@ -71,8 +71,25 @@
 .content-home-portfolio-title {
   @media (max-width: 700px) {
     text-align: center;
+    position: relative;
+  }
+  .circle {
+    @media (max-width: 700px) {
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-150%);
+    }
+  }
+  .circle0 {
+    @media (max-width: 700px) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-150%);
+    }
   }
 }
+
 .footer {
   @media (max-width: 1020px) {
     margin-top: 80px;

@@ -81,9 +81,11 @@ document
   .querySelector(".content-home-portfolio-title")
   .appendChild(circleMove0);
 
-// let text = document.querySelector(".container");
+let text = document.querySelector(".content-home-portfolio-title");
 // let textHeight = text.scrollHeight;
-// let textWidth = text.clientWidth;
+let moveWidth = text.clientWidth;
+console.log(moveWidth);
+
 // console.log(text.getBoundingClientRect());
 
 ////////////////////////////////////////////////////////
@@ -98,21 +100,59 @@ fff.addEventListener("click", function () {
 
 let start = 0;
 
+let home = document.querySelectorAll(".home a");
+
+console.log(home);
+
+// home.forEach((e) => {
+//   e.onclick = function () {
+//     if (window.matchMedia("screen and (max-width:700px)").matches) {
+//       start = 400;
+//     } else {
+//       start = 0;
+//     }
+//   };
+// });
+
+if (window.matchMedia("screen and (max-width:700px)").matches) {
+  start = 400;
+} else {
+  start = 0;
+}
+
+// window.onresize = function () {
+
+// };
+
+window.addEventListener("resize", function () {
+  if (window.matchMedia("screen and (max-width:700px)").matches) {
+    start = 400;
+  } else {
+    start = 0;
+  }
+});
+
+// window.addEventListener('resize', someFunc2);
+
 function move() {
-  start = start + 16;
-  circleMove.style.top = start + "px";
-  if (start > 600) {
+  start = start + 32;
+  circleMove2.style.left = start + "px";
+  if (start > moveWidth) {
     return true;
   }
   setTimeout(move, 400);
 }
 
+circleMove2.addEventListener("click", function () {
+  move();
+});
+
 let pusk = document.querySelectorAll(".about a");
 console.log(pusk);
 
-pusk.forEach((e) => {
-  e.onclick = move;
-});
+// pusk.forEach((e) => {
+//   e.onclick = move;
+// });
 
 let link = document.querySelectorAll(".stop a");
 console.log(link);

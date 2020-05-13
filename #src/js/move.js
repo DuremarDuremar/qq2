@@ -29,9 +29,9 @@ fff.addEventListener("click", function () {
 
 let start = 0;
 
-let home = document.querySelectorAll(".home a");
+// let home = document.querySelectorAll(".home a");
 
-console.log(home);
+// console.log(home);
 
 // home.forEach((e) => {
 //   e.onclick = function () {

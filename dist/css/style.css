@@ -413,6 +413,46 @@ body {
   transition: all ease-out 0.5s;
 }
 
+.taimer-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+}
+
+.timer-numbers {
+  font-size: 45px;
+  color: yellowgreen;
+  border: 3px solid #d45e5e;
+  padding: 15px;
+  display: inline-block;
+}
+
+.timer-numbers span:nth-child(2) {
+  color: darkgreen;
+  border-right: 3px solid #d45e5e;
+  padding: 0 15px;
+}
+
+.days {
+  color: darkgreen;
+}
+
+.hours {
+  font-weight: 900;
+}
+
+.minutes {
+  font-weight: 700;
+}
+
+.seconds {
+  font-weight: 500;
+}
+
 footer {
   background-color: #d45e5e;
   margin-top: 121px;

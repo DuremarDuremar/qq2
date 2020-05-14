@@ -2,7 +2,7 @@
 }
 
 .wrapper-aboutme {
-  display: flex;
+  // display: flex;
 }
 
 .text {
@@ -42,4 +42,39 @@
   display: block;
   position: relative;
   transition: all ease-out 0.5s;
+}
+
+////////////////////////////////////////////////
+
+.adaptivjs {
+  margin-top: 40px;
+}
+.adaptivjs-block {
+  display: flex;
+  justify-content: space-around;
+
+  &:first-child {
+    margin-bottom: 40px;
+  }
+  & div {
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    color: #fff;
+  }
+}
+
+.Russia {
+  background-color: #0000ff;
+}
+.Germany {
+  background-color: #f4a460;
+}
+
+.France {
+  background-color: #ff00ff;
+}
+.Poland {
+  background-color: red;
 }

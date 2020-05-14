@@ -2,3 +2,4 @@
 @@include("tabs.js");
 @@include("move.js");
 @@include("timer.js");
+@@include("adaptivjs.js");

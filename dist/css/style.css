@@ -360,12 +360,6 @@ body {
   cursor: pointer;
 }
 
-.wrapper-aboutme {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .text {
   padding-top: 60px;
   font-family: "PT Sans", sans-serif;
@@ -411,6 +405,46 @@ body {
   -webkit-transition: all ease-out 0.5s;
   -o-transition: all ease-out 0.5s;
   transition: all ease-out 0.5s;
+}
+
+.adaptivjs {
+  margin-top: 40px;
+}
+
+.adaptivjs-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.adaptivjs-block:first-child {
+  margin-bottom: 40px;
+}
+
+.adaptivjs-block div {
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+}
+
+.Russia {
+  background-color: #0000ff;
+}
+
+.Germany {
+  background-color: #f4a460;
+}
+
+.France {
+  background-color: #ff00ff;
+}
+
+.Poland {
+  background-color: red;
 }
 
 .taimer-block {

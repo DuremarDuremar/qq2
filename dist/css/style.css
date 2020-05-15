@@ -302,6 +302,7 @@ body {
 
 .content-home {
   margin-top: 57px;
+  position: relative;
 }
 
 .content-home-title-text {
@@ -358,6 +359,32 @@ body {
 
 .content-home-portfolio-block img {
   cursor: pointer;
+}
+
+.wmax {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  display: block;
+  margin: 0px auto;
+  z-index: 5;
+}
+
+.modal-window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffe0;
+  display: none;
+  z-index: 4;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .text {
@@ -649,7 +676,7 @@ footer {
   position: absolute;
   bottom: 5%;
   right: 5%;
-  z-index: 10;
+  z-index: 3;
   cursor: pointer;
 }
 

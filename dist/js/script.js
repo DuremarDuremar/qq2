@@ -182,8 +182,6 @@ function getTimeRemaining(endtime) {
   };
 }
 
-console.log("22");
-
 function setClock(id, endtime) {
   let timer = document.getElementById(id),
     days = timer.querySelector(".days"),
@@ -195,9 +193,27 @@ function setClock(id, endtime) {
   function updateClock() {
     let t = getTimeRemaining(endtime);
     days.textContent = t.days;
-    hours.textContent = t.hours;
-    minutes.textContent = t.minutes;
-    seconds.textContent = t.seconds;
+
+    // minutes.textContent = t.minutes;
+    // seconds.textContent = t.seconds;
+
+    if (t.hours < 10) {
+      hours.textContent = "0" + t.hours;
+    } else {
+      hours.textContent = t.hours;
+    }
+
+    if (t.minutes < 10) {
+      minutes.textContent = "0" + t.minutes;
+    } else {
+      minutes.textContent = t.minutes;
+    }
+
+    if (t.seconds < 10) {
+      seconds.textContent = "0" + t.seconds;
+    } else {
+      seconds.textContent = t.seconds;
+    }
 
     if (t.total <= 0) {
       clearInterval(timeInterval);
@@ -354,3 +370,51 @@ setClock("timer", deadline);
   }
 })();
 ;
+let rus = document.querySelector(".Russia");
+
+rus.addEventListener("click", function (event) {
+  //   this.style.backgroundColor = "red";
+  event.target.style.backgroundColor = "green";
+});
+
+let user1 = {
+  name: "Ivan",
+  color: " white",
+};
+
+let user2 = {
+  name: "Sergay",
+  color: " braun",
+};
+
+let user3 = {
+  name: "Oleg",
+  color: " gray",
+};
+
+function userName(number) {
+  //   console.log(this);
+  console.log(this.name + this.color + number);
+}
+
+// userName();
+
+// userName.call(user1, " 3");
+// userName.apply(user2, [" 4", " 5"]);
+;
+
+// let imgHome = document.querySelectorAll(".content-home-portfolio-block img");
+// let imgHomePort = document.querySelector(".content-home-portfolio-block");
+// let modalW = document.querySelector(".modal-window");
+// console.log(modalW);
+
+// imgHome.forEach((e) => {
+//   //   let imgH = e;
+//   //   console.log(imgH);
+//   e.addEventListener("click", function () {
+//     this.classList.add("wmax");
+//     modalW.style.display = "block";
+//     imgHomePort.classList.add("flex");
+//     document.body.style.overflow = "hidden";
+//   });
+// });

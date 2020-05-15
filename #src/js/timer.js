@@ -17,8 +17,6 @@ function getTimeRemaining(endtime) {
   };
 }
 
-console.log("22");
-
 function setClock(id, endtime) {
   let timer = document.getElementById(id),
     days = timer.querySelector(".days"),
@@ -30,9 +28,27 @@ function setClock(id, endtime) {
   function updateClock() {
     let t = getTimeRemaining(endtime);
     days.textContent = t.days;
-    hours.textContent = t.hours;
-    minutes.textContent = t.minutes;
-    seconds.textContent = t.seconds;
+
+    // minutes.textContent = t.minutes;
+    // seconds.textContent = t.seconds;
+
+    if (t.hours < 10) {
+      hours.textContent = "0" + t.hours;
+    } else {
+      hours.textContent = t.hours;
+    }
+
+    if (t.minutes < 10) {
+      minutes.textContent = "0" + t.minutes;
+    } else {
+      minutes.textContent = t.minutes;
+    }
+
+    if (t.seconds < 10) {
+      seconds.textContent = "0" + t.seconds;
+    } else {
+      seconds.textContent = t.seconds;
+    }
 
     if (t.total <= 0) {
       clearInterval(timeInterval);

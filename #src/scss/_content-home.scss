@@ -59,15 +59,15 @@
   }
 }
 
-.wmax {
-  width: 600px;
-  height: 600px;
-  position: absolute;
-  display: block;
-  margin: 0px auto;
+// .wmax {
+//   width: 600px;
+//   height: 600px;
+//   position: absolute;
+//   display: block;
+//   margin: 0px auto;
 
-  z-index: 5;
-}
+//   z-index: 5;
+// }
 
 .modal-window {
   position: fixed;
@@ -76,10 +76,42 @@
   right: 0;
   bottom: 0;
   background-color: #ffffe0;
-  display: none;
   z-index: 4;
 }
 
-.flex {
+.modal-windowOff {
+  display: none;
+}
+
+.modal-close {
+  float: right;
+  padding: 30px 30px 0 0;
+  display: block;
+  cursor: pointer;
+  & :hover {
+    color: red;
+  }
+}
+.modal-arrow {
+}
+.modal-left {
+}
+.modal-right {
+}
+
+.active {
+  border: 3px solid red;
   display: flex;
+  margin-left: 20px;
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.none {
+  display: none;
 }

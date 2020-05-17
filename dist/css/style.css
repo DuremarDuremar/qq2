@@ -386,6 +386,36 @@ body {
   color: red;
 }
 
+.modal-left {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  padding-left: 20px;
+}
+
+.modal-left :hover {
+  color: red;
+}
+
+.modal-right {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0;
+  padding-right: 20px;
+}
+
+.modal-right :hover {
+  color: red;
+}
+
 .active {
   border: 3px solid red;
   display: -webkit-box;
@@ -397,9 +427,9 @@ body {
   position: absolute;
   left: 50%;
   top: 0;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translateX(-53%);
+      -ms-transform: translateX(-53%);
+          transform: translateX(-53%);
   z-index: 5;
 }
 

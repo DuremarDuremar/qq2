@@ -92,11 +92,28 @@
     color: red;
   }
 }
-.modal-arrow {
-}
+
 .modal-left {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  padding-left: 20px;
+  & :hover {
+    color: red;
+  }
 }
 .modal-right {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  padding-right: 20px;
+  & :hover {
+    color: red;
+  }
 }
 
 .active {
@@ -108,7 +125,7 @@
   position: absolute;
   left: 50%;
   top: 0;
-  transform: translateX(-50%);
+  transform: translateX(-53%);
   z-index: 5;
 }
 

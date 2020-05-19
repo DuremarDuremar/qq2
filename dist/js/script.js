@@ -447,6 +447,12 @@ imgHome.forEach((e) => {
     document
       .querySelector(".modal-left")
       .addEventListener("click", function () {
+        imgHome[e].classList.remove("active");
+        if (e == 0) {
+          e = imgHome.length - 1;
+        } else {
+          e--;
+        }
         imgHome[e].classList.add("active");
       });
 

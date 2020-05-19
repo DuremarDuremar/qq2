@@ -415,13 +415,15 @@ let test12 = document.querySelector(".test12");
 //   console.log(imgHome[3]);
 // }
 
-for (let item of imgHome) {
-  console.log(item);
-}
+// for (let item = 0; item < imgHome.length; item++) {
+//   let ffg = { item };
+//   console.log(ffg);
+// }
 
 imgHome.forEach((e) => {
-  e = 2;
-  console.log(imgHome.index);
+  console.log(e.dataset.number);
+
+  e = e.dataset.number;
 
   imgHome[e].addEventListener("click", function () {
     document.documentElement.scrollTop = 0;
@@ -430,11 +432,6 @@ imgHome.forEach((e) => {
     document.body.style.overflow = "hidden";
 
     /////////////////////////open///////////////////
-    // let activ = document.querySelector(".active");
-    // console.log(activ);
-    // document.querySelector(".modal-right").onclick = function () {
-    //   activ.classList.remove("active");
-    // };
 
     document
       .querySelector(".modal-right")
@@ -450,16 +447,8 @@ imgHome.forEach((e) => {
     document
       .querySelector(".modal-left")
       .addEventListener("click", function () {
-        // e = e;
         imgHome[e].classList.add("active");
       });
-    //   imgHome[activ].classList.remove("active");
-    //   console.log(imgHome[activ]);
-    //   if (activ + 1 == imgHome.length) {
-    //     activ = 0;
-    //   } else {
-    //     activ++;
-    //   }
 
     /////////////////////close//////////////////
     document
@@ -472,22 +461,3 @@ imgHome.forEach((e) => {
       });
   });
 });
-
-// let activ = document.querySelector(".active");
-// console.log(activ);
-
-// document.querySelector(".modal-right").onclick = function () {
-//   activ.classList.remove("active");
-// };
-
-// let activ = 0;
-
-// document.querySelector(".modal-right").onclick = function () {
-//   images[activ].classList.remove("active");
-//   console.log(images[activ]);
-//   if (activ + 1 == images.length) {
-//     activ = 0;
-//   } else {
-//     activ++;
-//   }
-// };

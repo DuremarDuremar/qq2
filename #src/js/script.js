@@ -46,6 +46,7 @@ imgHome.forEach((e) => {
         }
         imgHome[e].classList.add("active");
       });
+
     document
       .querySelector(".modal-left")
       .addEventListener("click", function () {
@@ -62,10 +63,10 @@ imgHome.forEach((e) => {
     document
       .querySelector(".modal-close")
       .addEventListener("click", function () {
-        modalW.classList.add("modal-windowOff");
-
-        imgHome[e].classList.remove("active");
-        document.body.style.overflow = "";
+        location.reload();
+        // modalW.classList.add("modal-windowOff");
+        // imgHome[e].classList.remove("active");
+        // document.body.style.overflow = "";
       });
   });
 });

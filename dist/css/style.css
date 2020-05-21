@@ -564,6 +564,23 @@ body {
   font-weight: 500;
 }
 
+.ajax {
+  margin: 30px auto 0;
+}
+
+.ajax form span {
+  font-size: 18px;
+}
+
+.ajax form input {
+  border: 2px solid black;
+  font-size: 20px;
+}
+
+.ajax form:last-child {
+  margin-top: 20px;
+}
+
 footer {
   background-color: #d45e5e;
   margin-top: 121px;

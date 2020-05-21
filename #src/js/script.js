@@ -3,70 +3,31 @@
 @@include("move.js");
 @@include("timer.js");
 @@include("adaptivjs.js");
+@@include("slaider.js");
 @@include("other.js");
 
-let imgHome = document.querySelectorAll(".content-home-portfolio-block img");
-let imgHomePort = document.querySelector(".content-home-portfolio-block");
-let modalW = document.querySelector(".modal-window");
-// console.log(modalW);
-let test11 = document.querySelector(".test11");
-let test12 = document.querySelector(".test12");
-// console.log(test11);
+let irub = document.querySelector(".rub");
+let iusd = document.querySelector(".usd");
+let number;
 
-// for (let i = 0; i < imgHome.length; i++) {
-//   console.log(imgHome[3]);
-// }
+irub.addEventListener("input", () => {
+  let request = new XMLHttpRequest();
+  request.open("GET", "js/current.json");
+  request.setRequestHeader("Content-type", "application/json; charset=utf-8");
+  request.send();
+  console.log(request);
+  request.addEventListener("readystatechange", function () {
+    if (request.readyState === 4 && request.status == 200) {
+      let data = JSON.parse(request.response);
+      console.log(data);
 
-// for (let item = 0; item < imgHome.length; item++) {
-//   let ffg = { item };
-//   console.log(ffg);
-// }
+      number = irub.value / data.usd;
+      iusd.value = number.toFixed(2);
 
-imgHome.forEach((e) => {
-  console.log(e.dataset.number);
-
-  e = e.dataset.number;
-
-  imgHome[e].addEventListener("click", function () {
-    document.documentElement.scrollTop = 0;
-    imgHome[e].classList.add("active");
-    modalW.classList.remove("modal-windowOff");
-    document.body.style.overflow = "hidden";
-
-    /////////////////////////open///////////////////
-
-    document
-      .querySelector(".modal-right")
-      .addEventListener("click", function () {
-        imgHome[e].classList.remove("active");
-        if (e + 1 == imgHome.length) {
-          e = 0;
-        } else {
-          e++;
-        }
-        imgHome[e].classList.add("active");
-      });
-
-    document
-      .querySelector(".modal-left")
-      .addEventListener("click", function () {
-        imgHome[e].classList.remove("active");
-        if (e == 0) {
-          e = imgHome.length - 1;
-        } else {
-          e--;
-        }
-        imgHome[e].classList.add("active");
-      });
-
-    /////////////////////close//////////////////
-    document
-      .querySelector(".modal-close")
-      .addEventListener("click", function () {
-        location.reload();
-        // modalW.classList.add("modal-windowOff");
-        // imgHome[e].classList.remove("active");
-        // document.body.style.overflow = "";
-      });
+      //   iusd.value.toFixed(2) = iusd.value;
+    } else {
+      iusd.value = "bad";
+    }
   });
+  console.log(number);
 });

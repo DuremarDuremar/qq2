@@ -370,55 +370,9 @@ setClock("timer", deadline);
   }
 })();
 ;
-let rus = document.querySelector(".Russia");
-
-rus.addEventListener("click", function (event) {
-  //   this.style.backgroundColor = "red";
-  event.target.style.backgroundColor = "green";
-});
-
-let user1 = {
-  name: "Ivan",
-  color: " white",
-};
-
-let user2 = {
-  name: "Sergay",
-  color: " braun",
-};
-
-let user3 = {
-  name: "Oleg",
-  color: " gray",
-};
-
-function userName(number) {
-  //   console.log(this);
-  console.log(this.name + this.color + number);
-}
-
-// userName();
-
-// userName.call(user1, " 3");
-// userName.apply(user2, [" 4", " 5"]);
-;
-
 let imgHome = document.querySelectorAll(".content-home-portfolio-block img");
 let imgHomePort = document.querySelector(".content-home-portfolio-block");
 let modalW = document.querySelector(".modal-window");
-// console.log(modalW);
-let test11 = document.querySelector(".test11");
-let test12 = document.querySelector(".test12");
-// console.log(test11);
-
-// for (let i = 0; i < imgHome.length; i++) {
-//   console.log(imgHome[3]);
-// }
-
-// for (let item = 0; item < imgHome.length; item++) {
-//   let ffg = { item };
-//   console.log(ffg);
-// }
 
 imgHome.forEach((e) => {
   console.log(e.dataset.number);
@@ -467,4 +421,63 @@ imgHome.forEach((e) => {
         // document.body.style.overflow = "";
       });
   });
+});
+;
+let rus = document.querySelector(".Russia");
+
+rus.addEventListener("click", function (event) {
+  //   this.style.backgroundColor = "red";
+  event.target.style.backgroundColor = "green";
+});
+
+let user1 = {
+  name: "Ivan",
+  color: " white",
+};
+
+let user2 = {
+  name: "Sergay",
+  color: " braun",
+};
+
+let user3 = {
+  name: "Oleg",
+  color: " gray",
+};
+
+function userName(number) {
+  //   console.log(this);
+  console.log(this.name + this.color + number);
+}
+
+// userName();
+
+// userName.call(user1, " 3");
+// userName.apply(user2, [" 4", " 5"]);
+;
+
+let irub = document.querySelector(".rub");
+let iusd = document.querySelector(".usd");
+let number;
+
+irub.addEventListener("input", () => {
+  let request = new XMLHttpRequest();
+  request.open("GET", "js/current.json");
+  request.setRequestHeader("Content-type", "application/json; charset=utf-8");
+  request.send();
+  console.log(request);
+  request.addEventListener("readystatechange", function () {
+    if (request.readyState === 4 && request.status == 200) {
+      let data = JSON.parse(request.response);
+      console.log(data);
+
+      number = irub.value / data.usd;
+      iusd.value = number.toFixed(2);
+
+      //   iusd.value.toFixed(2) = iusd.value;
+    } else {
+      iusd.value = "bad";
+    }
+  });
+  console.log(number);
 });

@@ -13,7 +13,6 @@ document
 let text = document.querySelector(".content-home-portfolio-title");
 // let textHeight = text.scrollHeight;
 let moveWidth = text.clientWidth;
-console.log(moveWidth);
 
 // console.log(text.getBoundingClientRect());
 

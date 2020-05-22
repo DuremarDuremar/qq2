@@ -8,6 +8,7 @@ let path = {
     html: project_folder + "/",
     css: project_folder + "/css/",
     js: project_folder + "/js/",
+    json: project_folder + "/json/",
     img: project_folder + "/img/",
     fonts: project_folder + "/fonts/",
   },
@@ -15,6 +16,7 @@ let path = {
     html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
     css: source_folder + "/scss/style.scss",
     js: source_folder + "/js/script.js",
+    json: source_folder + "/json/*.json",
     img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
     fonts: source_folder + "/fonts/*.{ttf,woff,woff2}",
   },
@@ -102,6 +104,10 @@ function js() {
     .pipe(dest(path.build.js));
 }
 
+function json() {
+  return src(path.src.json).pipe(dest(path.build.json));
+}
+
 function images() {
   return src(path.src.img)
     .pipe(
@@ -181,7 +187,7 @@ function clean(params) {
 
 let build = gulp.series(
   clean,
-  gulp.parallel(js, css, html, images, fonts),
+  gulp.parallel(js, json, css, html, images, fonts),
   fontsStyle
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
@@ -190,6 +196,7 @@ exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
 exports.js = js;
+exports.json = json;
 exports.css = css;
 exports.html = html;
 exports.build = build;

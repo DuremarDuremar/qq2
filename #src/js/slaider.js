@@ -3,8 +3,6 @@ let imgHomePort = document.querySelector(".content-home-portfolio-block");
 let modalW = document.querySelector(".modal-window");
 
 imgHome.forEach((e) => {
-  console.log(e.dataset.number);
-
   e = e.dataset.number;
 
   imgHome[e].addEventListener("click", function () {

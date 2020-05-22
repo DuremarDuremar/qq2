@@ -84,7 +84,6 @@ document
 let text = document.querySelector(".content-home-portfolio-title");
 // let textHeight = text.scrollHeight;
 let moveWidth = text.clientWidth;
-console.log(moveWidth);
 
 // console.log(text.getBoundingClientRect());
 
@@ -375,8 +374,6 @@ let imgHomePort = document.querySelector(".content-home-portfolio-block");
 let modalW = document.querySelector(".modal-window");
 
 imgHome.forEach((e) => {
-  console.log(e.dataset.number);
-
   e = e.dataset.number;
 
   imgHome[e].addEventListener("click", function () {
@@ -423,6 +420,28 @@ imgHome.forEach((e) => {
   });
 });
 ;
+let irub = document.querySelector(".rub");
+let iusd = document.querySelector(".usd");
+let number;
+
+irub.addEventListener("input", () => {
+  let request = new XMLHttpRequest();
+  request.open("GET", "json/current.json");
+  request.setRequestHeader("Content-type", "application/json; charset=utf-8");
+  request.send();
+  console.log(request);
+  request.addEventListener("readystatechange", function () {
+    if (request.readyState === 4 && request.status == 200) {
+      let data = JSON.parse(request.response);
+
+      number = irub.value / data.usd;
+      iusd.value = number.toFixed(2);
+    } else {
+      iusd.value = "bad";
+    }
+  });
+});
+;
 let rus = document.querySelector(".Russia");
 
 rus.addEventListener("click", function (event) {
@@ -455,29 +474,3 @@ function userName(number) {
 // userName.call(user1, " 3");
 // userName.apply(user2, [" 4", " 5"]);
 ;
-
-let irub = document.querySelector(".rub");
-let iusd = document.querySelector(".usd");
-let number;
-
-irub.addEventListener("input", () => {
-  let request = new XMLHttpRequest();
-  request.open("GET", "js/current.json");
-  request.setRequestHeader("Content-type", "application/json; charset=utf-8");
-  request.send();
-  console.log(request);
-  request.addEventListener("readystatechange", function () {
-    if (request.readyState === 4 && request.status == 200) {
-      let data = JSON.parse(request.response);
-      console.log(data);
-
-      number = irub.value / data.usd;
-      iusd.value = number.toFixed(2);
-
-      //   iusd.value.toFixed(2) = iusd.value;
-    } else {
-      iusd.value = "bad";
-    }
-  });
-  console.log(number);
-});

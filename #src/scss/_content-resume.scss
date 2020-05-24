@@ -20,3 +20,24 @@
 }
 .usd {
 }
+
+.ajax2 {
+  margin: 20px auto 0;
+  & button {
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+  }
+}
+.post {
+  border: 3px solid green;
+  font-size: 20px;
+}
+
+.status {
+  font-size: 20px;
+}
+
+.border-red {
+  border: 3px solid red;
+}

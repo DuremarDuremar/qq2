@@ -441,6 +441,28 @@ irub.addEventListener("input", () => {
     }
   });
 });
+
+////////////////////////////////////////////////////////////
+
+let message = {
+  loading: "загрузка...",
+  success: "спасибо",
+  failure: "ошибка",
+};
+
+let form = document.querySelector(".ajax2 form");
+console.log(form);
+
+let input = form.querySelector("input");
+console.log(input);
+
+let statusMessage = document.createElement("div");
+statusMessage.classList.add("status");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  input.classList.toggle("border-red");
+});
 ;
 let rus = document.querySelector(".Russia");
 

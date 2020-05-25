@@ -462,6 +462,24 @@ statusMessage.classList.add("status");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   input.classList.toggle("border-red");
+  form.appendChild(statusMessage);
+
+  let request = new XMLHttpRequest();
+  request.open("POST", "http://jsonplaceholder.typicode.com/posts");
+  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  let formData = new FormData(form);
+  request.send(formData);
+
+  request.addEventListener("readystatechange", function () {
+    if (request.readyState < 4) {
+      statusMessage.innerHTML = message.loading;
+    } else if (this.readyState.readyState === 4 && request.status == 200) {
+      statusMessage.innerHTML = message.success;
+    } else {
+      statusMessage.innerHTML = message.failure;
+    }
+  });
 });
 ;
 let rus = document.querySelector(".Russia");
@@ -495,4 +513,49 @@ function userName(number) {
 
 // userName.call(user1, " 3");
 // userName.apply(user2, [" 4", " 5"]);
+
+//////////////////////promis
+
+// function Gre() {
+
+// }
+
+// Gre();
+
+// const pr = new Promise(function (resolve, reject) {
+//   // setTimeout(function () {
+//   //   console.log("eeeee");
+//   // }, 4000);
+//   console.log("www");
+//   console.log("rrrrr");
+//   const color = {
+//     red: 09,
+//     green: 12,
+//   };
+//   resolve(color);
+// });
+
+// pr.then((color) => {
+//   console.log(color.green);
+
+// });
 ;
+
+let slide2index = 1,
+  slider2 = document.querySelectorAll(".slider2-item"),
+  prev2 = document.querySelector(".slider2-prev"),
+  next2 = document.querySelector(".slider2-next"),
+  dotsWrap = document.querySelector(".slider2-dots"),
+  dots = document.querySelectorAll(".slider2-dot");
+
+function showSlider2(n) {
+  slider2.forEach(function (item) {
+    item.style.display = "none";
+  });
+  dots.forEach(function (item) {
+    item.classList.remove("dot-active");
+  });
+  slider2[slide2index - 1].style.display = "flex";
+  dots[slide2index - 1].classList.add("dot-active");
+}
+showSlider2(slide2index);

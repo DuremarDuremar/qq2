@@ -29,3 +29,29 @@ function userName(number) {
 
 // userName.call(user1, " 3");
 // userName.apply(user2, [" 4", " 5"]);
+
+//////////////////////promis
+
+// function Gre() {
+
+// }
+
+// Gre();
+
+// const pr = new Promise(function (resolve, reject) {
+//   // setTimeout(function () {
+//   //   console.log("eeeee");
+//   // }, 4000);
+//   console.log("www");
+//   console.log("rrrrr");
+//   const color = {
+//     red: 09,
+//     green: 12,
+//   };
+//   resolve(color);
+// });
+
+// pr.then((color) => {
+//   console.log(color.green);
+
+// });

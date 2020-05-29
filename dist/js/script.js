@@ -147,14 +147,12 @@ circleMove2.addEventListener("click", function () {
 });
 
 let pusk = document.querySelectorAll(".about a");
-console.log(pusk);
 
 // pusk.forEach((e) => {
 //   e.onclick = move;
 // });
 
 let link = document.querySelectorAll(".stop a");
-console.log(link);
 
 link.forEach((e) => {
   e.onclick = function () {
@@ -510,12 +508,20 @@ days.addEventListener("change", function () {
   }
 });
 
+let aff = 0;
+
+if (localStorage.getItem("isChecked") === "true") {
+  aff = aff + 100;
+}
+
+console.log(aff);
+
 place.addEventListener("change", function () {
   if (days.value == "" || persons.value == "") {
     totalValue.innerHTML = 0;
   } else {
-    let a = total;
-    totalValue.innerHTML = a * this.options[this.selectedIndex].value;
+    aff = total;
+    totalValue.innerHTML = aff * this.options[this.selectedIndex].value;
   }
 });
 ;
@@ -550,10 +556,8 @@ let message = {
 };
 
 let form = document.querySelector(".ajax2 form");
-console.log(form);
 
 let input = form.querySelector("input");
-console.log(input);
 
 let statusMessage = document.createElement("div");
 statusMessage.classList.add("status");
@@ -639,3 +643,22 @@ function userName(number) {
 
 // });
 ;
+
+let checkboxDiv = document.querySelector(".dop");
+let checkbox = document.querySelector(".dop input");
+
+if (localStorage.getItem("isChecked") === "false") {
+  localStorage.setItem("isChecked", false);
+  checkbox.checked = false;
+} else {
+  localStorage.setItem("isChecked", true);
+  checkbox.checked = true;
+}
+
+checkbox.addEventListener("click", function () {
+  if (localStorage.getItem("isChecked") === "false") {
+    localStorage.setItem("isChecked", true);
+  } else {
+    localStorage.setItem("isChecked", false);
+  }
+});

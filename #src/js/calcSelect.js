@@ -28,11 +28,19 @@ days.addEventListener("change", function () {
   }
 });
 
+let aff = 0;
+
+if (localStorage.getItem("isChecked") === "true") {
+  aff = aff + 100;
+}
+
+console.log(aff);
+
 place.addEventListener("change", function () {
   if (days.value == "" || persons.value == "") {
     totalValue.innerHTML = 0;
   } else {
-    let a = total;
-    totalValue.innerHTML = a * this.options[this.selectedIndex].value;
+    aff = total;
+    totalValue.innerHTML = aff * this.options[this.selectedIndex].value;
   }
 });

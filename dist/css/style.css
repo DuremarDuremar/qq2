@@ -721,6 +721,11 @@ body {
   padding-bottom: 3px;
 }
 
+.dop span {
+  color: brown;
+  padding-right: 5px;
+}
+
 .fin {
   border: 2px solid black;
   height: 25px;

@@ -29,10 +29,8 @@ let message = {
 };
 
 let form = document.querySelector(".ajax2 form");
-console.log(form);
 
 let input = form.querySelector("input");
-console.log(input);
 
 let statusMessage = document.createElement("div");
 statusMessage.classList.add("status");

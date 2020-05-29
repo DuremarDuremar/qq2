@@ -80,6 +80,13 @@
   }
 }
 
+.dop {
+  & span {
+    color: brown;
+    padding-right: 5px;
+  }
+}
+
 .fin {
   border: 2px solid rgb(0, 0, 0);
   height: 25px;

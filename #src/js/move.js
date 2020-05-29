@@ -76,14 +76,12 @@ circleMove2.addEventListener("click", function () {
 });
 
 let pusk = document.querySelectorAll(".about a");
-console.log(pusk);
 
 // pusk.forEach((e) => {
 //   e.onclick = move;
 // });
 
 let link = document.querySelectorAll(".stop a");
-console.log(link);
 
 link.forEach((e) => {
   e.onclick = function () {

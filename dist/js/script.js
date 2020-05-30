@@ -478,6 +478,28 @@ dotsWrap.addEventListener("click", function (event) {
   }
 });
 ;
+let checkboxDiv = document.querySelector(".dop");
+let checkbox = document.querySelector(".dop input");
+
+if (localStorage.getItem("isChecked") === "false") {
+  localStorage.setItem("isChecked", false);
+  checkbox.checked = false;
+} else {
+  localStorage.setItem("isChecked", true);
+  checkbox.checked = true;
+}
+
+checkbox.addEventListener("click", function () {
+  if (localStorage.getItem("isChecked") === "false") {
+    localStorage.setItem("isChecked", true);
+    let b = PlaceChange2;
+    totalValue.innerHTML = b * 1.1;
+  } else {
+    localStorage.setItem("isChecked", false);
+    totalValue.innerHTML = PlaceChange2;
+  }
+});
+;
 let persons = document.querySelectorAll(".payment-inputs input")[0];
 let days = document.querySelectorAll(".payment-inputs input")[1];
 let place = document.querySelector("#place");
@@ -490,6 +512,10 @@ persons.addEventListener("change", function () {
   personsSum = +this.value;
   total = (personsSum + daysSum) * 4000;
 
+  if (localStorage.getItem("isChecked") === "true") {
+    total = total * 1.1;
+  }
+
   if (days.value == "" || persons.value == "") {
     totalValue.innerHTML = 0;
   } else {
@@ -501,6 +527,10 @@ days.addEventListener("change", function () {
   daysSum = +this.value;
   total = (personsSum + daysSum) * 4000;
 
+  if (localStorage.getItem("isChecked") === "true") {
+    total = total * 1.1;
+  }
+
   if (persons.value == "" || days.value == "") {
     totalValue.innerHTML = 0;
   } else {
@@ -508,22 +538,20 @@ days.addEventListener("change", function () {
   }
 });
 
-let aff = 0;
-
-if (localStorage.getItem("isChecked") === "true") {
-  aff = aff + 100;
-}
-
-console.log(aff);
+let PlaceChange = 0;
+let PlaceChange2 = 0;
 
 place.addEventListener("change", function () {
   if (days.value == "" || persons.value == "") {
     totalValue.innerHTML = 0;
   } else {
-    aff = total;
-    totalValue.innerHTML = aff * this.options[this.selectedIndex].value;
+    PlaceChange = total;
+    PlaceChange2 = PlaceChange * this.options[this.selectedIndex].value;
+    totalValue.innerHTML = PlaceChange2;
   }
 });
+
+console.log(totalValue.textContent);
 ;
 let irub = document.querySelector(".rub");
 let iusd = document.querySelector(".usd");
@@ -643,22 +671,3 @@ function userName(number) {
 
 // });
 ;
-
-let checkboxDiv = document.querySelector(".dop");
-let checkbox = document.querySelector(".dop input");
-
-if (localStorage.getItem("isChecked") === "false") {
-  localStorage.setItem("isChecked", false);
-  checkbox.checked = false;
-} else {
-  localStorage.setItem("isChecked", true);
-  checkbox.checked = true;
-}
-
-checkbox.addEventListener("click", function () {
-  if (localStorage.getItem("isChecked") === "false") {
-    localStorage.setItem("isChecked", true);
-  } else {
-    localStorage.setItem("isChecked", false);
-  }
-});

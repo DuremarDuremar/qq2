@@ -119,13 +119,13 @@
 .active {
   border: 3px solid red;
   display: flex;
-  margin-left: 20px;
+  // margin-left: 20px;
   width: 450px;
   height: 450px;
   position: absolute;
   left: 50%;
   top: 0;
-  transform: translateX(-53%);
+  transform: translateX(-50%);
   z-index: 5;
 }
 

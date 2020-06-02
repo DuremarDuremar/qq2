@@ -14,8 +14,9 @@ checkbox.addEventListener("click", function () {
     localStorage.setItem("isChecked", true);
     let b = PlaceChange2;
     totalValue.innerHTML = b * 1.1;
-  } else {
+  } else if (localStorage.getItem("isChecked") === "true") {
     localStorage.setItem("isChecked", false);
-    totalValue.innerHTML = PlaceChange2;
+    let d = PlaceChange2;
+    totalValue.innerHTML = d;
   }
 });

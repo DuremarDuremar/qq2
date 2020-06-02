@@ -494,9 +494,10 @@ checkbox.addEventListener("click", function () {
     localStorage.setItem("isChecked", true);
     let b = PlaceChange2;
     totalValue.innerHTML = b * 1.1;
-  } else {
+  } else if (localStorage.getItem("isChecked") === "true") {
     localStorage.setItem("isChecked", false);
-    totalValue.innerHTML = PlaceChange2;
+    let d = PlaceChange2;
+    totalValue.innerHTML = d;
   }
 });
 ;
@@ -544,14 +545,16 @@ let PlaceChange2 = 0;
 place.addEventListener("change", function () {
   if (days.value == "" || persons.value == "") {
     totalValue.innerHTML = 0;
-  } else {
+  } else if (localStorage.getItem("isChecked") === "false") {
     PlaceChange = total;
     PlaceChange2 = PlaceChange * this.options[this.selectedIndex].value;
     totalValue.innerHTML = PlaceChange2;
+  } else if (localStorage.getItem("isChecked") === "true") {
+    PlaceChange = total;
+    PlaceChange3 = PlaceChange * this.options[this.selectedIndex].value * 1.1;
+    totalValue.innerHTML = PlaceChange3;
   }
 });
-
-console.log(totalValue.textContent);
 ;
 let irub = document.querySelector(".rub");
 let iusd = document.querySelector(".usd");

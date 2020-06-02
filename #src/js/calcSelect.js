@@ -42,11 +42,13 @@ let PlaceChange2 = 0;
 place.addEventListener("change", function () {
   if (days.value == "" || persons.value == "") {
     totalValue.innerHTML = 0;
-  } else {
+  } else if (localStorage.getItem("isChecked") === "false") {
     PlaceChange = total;
     PlaceChange2 = PlaceChange * this.options[this.selectedIndex].value;
     totalValue.innerHTML = PlaceChange2;
+  } else if (localStorage.getItem("isChecked") === "true") {
+    PlaceChange = total;
+    PlaceChange3 = PlaceChange * this.options[this.selectedIndex].value * 1.1;
+    totalValue.innerHTML = PlaceChange3;
   }
 });
-
-console.log(totalValue.textContent);

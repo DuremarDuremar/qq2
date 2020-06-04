@@ -7,7 +7,6 @@ irub.addEventListener("input", () => {
   request.open("GET", "json/current.json");
   request.setRequestHeader("Content-type", "application/json; charset=utf-8");
   request.send();
-  console.log(request);
   request.addEventListener("readystatechange", function () {
     if (request.readyState === 4 && request.status == 200) {
       let data = JSON.parse(request.response);

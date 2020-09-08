@@ -15,7 +15,6 @@ window.onresize = function () {
   } else {
   }
 };
-;
 let tab = document.querySelectorAll(".link");
 let info = document.querySelector(".header-nav");
 let tabContent = document.querySelectorAll(".content");
@@ -68,22 +67,21 @@ infoadap.addEventListener("click", function (event) {
     }
   }
 });
-;
-let circleMove = document.querySelector(".circle");
-let circleMove2 = circleMove.cloneNode(true);
+// let circleMove = document.querySelector(".circle");
+// let circleMove2 = circleMove.cloneNode(true);
 
-let circleMove0 = document.querySelector(".circle0");
+// let circleMove0 = document.querySelector(".circle0");
 
-console.log(circleMove.getBoundingClientRect());
+// console.log(circleMove.getBoundingClientRect());
 
-document.querySelector(".content-home-portfolio-title").prepend(circleMove2);
-document
-  .querySelector(".content-home-portfolio-title")
-  .appendChild(circleMove0);
+// document.querySelector(".content-home-portfolio-title").prepend(circleMove2);
+// document
+//   .querySelector(".content-home-portfolio-title")
+//   .appendChild(circleMove0);
 
-let text = document.querySelector(".content-home-portfolio-title");
-// let textHeight = text.scrollHeight;
-let moveWidth = text.clientWidth;
+// let text = document.querySelector(".content-home-portfolio-title");
+// // let textHeight = text.scrollHeight;
+// let moveWidth = text.clientWidth;
 
 // console.log(text.getBoundingClientRect());
 
@@ -142,9 +140,9 @@ function move() {
   setTimeout(move, 400);
 }
 
-circleMove2.addEventListener("click", function () {
-  move();
-});
+// circleMove2.addEventListener("click", function () {
+//   move();
+// });
 
 let pusk = document.querySelectorAll(".about a");
 
@@ -159,7 +157,6 @@ link.forEach((e) => {
     start = 0;
   };
 });
-;
 let deadline = "2020-07-27";
 
 function getTimeRemaining(endtime) {
@@ -218,7 +215,6 @@ function setClock(id, endtime) {
   }
 }
 setClock("timer", deadline);
-;
 ("use strict");
 
 (function () {
@@ -366,7 +362,6 @@ setClock("timer", deadline);
     );
   }
 })();
-;
 let imgHome = document.querySelectorAll(".content-home-portfolio-block img");
 let imgHomePort = document.querySelector(".content-home-portfolio-block");
 let modalW = document.querySelector(".modal-window");
@@ -417,7 +412,6 @@ imgHome.forEach((e) => {
       });
   });
 });
-;
 let slide2index = 1,
   slider2 = document.querySelectorAll(".slider2-item"),
   prev2 = document.querySelector(".slider2-prev"),
@@ -477,7 +471,6 @@ dotsWrap.addEventListener("click", function (event) {
     }
   }
 });
-;
 let checkboxDiv = document.querySelector(".dop");
 let checkbox = document.querySelector(".dop input");
 
@@ -500,7 +493,6 @@ checkbox.addEventListener("click", function () {
     totalValue.innerHTML = d;
   }
 });
-;
 let persons = document.querySelectorAll(".payment-inputs input")[0];
 let days = document.querySelectorAll(".payment-inputs input")[1];
 let place = document.querySelector("#place");
@@ -555,7 +547,6 @@ place.addEventListener("change", function () {
     totalValue.innerHTML = PlaceChange3;
   }
 });
-;
 let irub = document.querySelector(".rub");
 let iusd = document.querySelector(".usd");
 let number;
@@ -614,7 +605,6 @@ form.addEventListener("submit", function (event) {
     }
   });
 });
-;
 let rus = document.querySelector(".Russia");
 
 rus.addEventListener("click", function (event) {
@@ -672,4 +662,3 @@ function userName(number) {
 //   console.log(color.green);
 
 // });
-;
